@@ -8,7 +8,11 @@ class User
     // private   -> the property or method can ONLY be accessed within the class
     //-----------------------------------------------------------------------------//
     // $this keyword ->  a reserved keyword in PHP that refers to the calling object.
-    private $name;
+    private ?string $name = null;
+
+    // Typed Properties
+    public ?int $age = null; // Uninitialized
+    //  Default value for property of type int may not be null, so Use the nullable type ?int to allow null default value
     /**
      * @param mixed $name
      * @return User::name
