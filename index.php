@@ -34,7 +34,17 @@ require_once 'MySQLHandler.php';
 
 $db = new Database();
 $db->handle(new SQLiteHandler());
-$db->create(); // Creating sqlite database
+//$db->create(); // Creating sqlite database
 
 $db->handle(new MySQLHandler());
-$db->create(); // Creating mysql database
+//$db->create(); // Creating mysql database
+
+//------------------------------------------------------------------//
+//-------------------------Overriding----------------------------//
+require_once 'Admin.php';
+require_once 'Person.php';
+$admin = new Admin();
+echo $admin->setName("admin") . "<br/>"; // ADMIN
+
+$person = new Person();
+echo $person->setName("person") . "<br/>"; // Person
