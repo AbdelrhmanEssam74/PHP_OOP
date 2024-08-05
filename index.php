@@ -40,11 +40,27 @@ $db->handle(new MySQLHandler());
 //$db->create(); // Creating mysql database
 
 //------------------------------------------------------------------//
-//-------------------------Overriding----------------------------//
+//-------------------------Overriding-------------------------------//
 require_once 'Admin.php';
 require_once 'Person.php';
 $admin = new Admin();
-echo $admin->setName("admin") . "<br/>"; // ADMIN
+//echo $admin->setName("admin") . "<br/>"; // ADMIN
 
 $person = new Person();
-echo $person->setName("person") . "<br/>"; // Person
+//echo $person->setName("person") . "<br/>"; // Person
+
+//------------------------------------------------------------------//
+//-------------------------Magic Method-----------------------------//
+require_once 'MagicMethod.php';
+$obj = new MagicMethod();
+var_dump($obj->instance());
+echo "<br>";
+$obj1 = new MagicMethod();
+var_dump($obj1->instance());
+echo "<br>";
+$obj2 = new MagicMethod();
+var_dump($obj2->instance());
+
+unset($obj);
+echo "<br>";
+var_dump(MagicMethod::$connection);
