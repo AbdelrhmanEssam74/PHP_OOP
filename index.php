@@ -74,4 +74,9 @@ $instance->lastname = "abdo";
 $instance->address = "15ST, Cairo";
 $instance->name = "username";
 $instance->id = "5";
-var_dump($instance->id);
+//var_dump($instance->id);
+//------------------------------------------------------------------//
+//-------------------------Method Overloading-----------------------//
+require_once 'MethodsOverloading.php';
+$instance2 = new MethodsOverloading();
+var_dump($instance2->sum(20, 30, 4, 50, 60));
