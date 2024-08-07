@@ -53,14 +53,25 @@ $person = new Person();
 //-------------------------Magic Method-----------------------------//
 require_once 'MagicMethod.php';
 $obj = new MagicMethod();
-var_dump($obj->instance());
-echo "<br>";
+//var_dump($obj->instance());
+//echo "<br>";
 $obj1 = new MagicMethod();
-var_dump($obj1->instance());
-echo "<br>";
+//var_dump($obj1->instance());
+//echo "<br>";
 $obj2 = new MagicMethod();
-var_dump($obj2->instance());
+//var_dump($obj2->instance());
 
 unset($obj);
-echo "<br>";
-var_dump(MagicMethod::$connection);
+//echo "<br>";
+//var_dump(MagicMethod::$connection);
+
+//------------------------------------------------------------------//
+//-------------------------Property Overloading---------------------//
+require_once 'PropertyOverloading.php';
+$instance = new PropertyOverloading();
+$instance->age = 50;
+$instance->lastname = "abdo";
+$instance->address = "15ST, Cairo";
+$instance->name = "username";
+$instance->id = "5";
+var_dump($instance->id);
